@@ -1,7 +1,5 @@
 package com.zhunongyun.toalibaba.leetcode.algorithm;
 
-import org.springframework.util.Assert;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,11 +23,5 @@ public class LeetCode1 {
             map.put(nums[i], i);
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        LeetCode1 leetCode1 = new LeetCode1();
-        System.out.println(leetCode1.twoSum(new int[]{2,7,11,15}, 9));
-        System.out.println(leetCode1.twoSum(new int[]{3,2,4}, 6));
     }
 }

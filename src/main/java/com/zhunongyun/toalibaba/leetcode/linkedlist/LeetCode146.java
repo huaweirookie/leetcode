@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * TODO
+ *
  *
  * @author oscar
  * @date 2022/1/27 15:29
@@ -15,7 +15,9 @@ public class LeetCode146 {
 
     private int capacity;
 
-    private Node head, tail;
+    private Node head;
+
+    private Node tail;
 
     private Map<Integer, Node> cache = new HashMap<>();
 

@@ -2,15 +2,15 @@ package com.zhunongyun.toalibaba.leetcode.linkedlist;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.util.Assert;
+import org.springframework.test.util.AssertionErrors;
 
 /**
- * TODO
+ *
  *
  * @author oscar
  * @date 2022/1/26 11:46
  */
-public class TestLeetCode19 {
+class TestLeetCode19 {
 
     private final LeetCode19 leetCode19 = new LeetCode19();
 
@@ -24,36 +24,36 @@ public class TestLeetCode19 {
     @Test
     void firstListNode() {
         ListNode listNode = leetCode19.removeNthFromEnd(normalListNode, 5);
-        Assert.isTrue("4356".equals(ListNodeUtils.translateToString(listNode)), "删除第一个结点测试用例异常");
+        AssertionErrors.assertTrue("删除第一个结点测试用例异常", "4356".equals(ListNodeUtils.translateToString(listNode)));
     }
 
     @Test
     void lastListNode() {
         ListNode listNode = leetCode19.removeNthFromEnd(normalListNode, 1);
-        Assert.isTrue("2435".equals(ListNodeUtils.translateToString(listNode)), "删除最后一个结点测试用例异常");
+        AssertionErrors.assertTrue("删除最后一个结点测试用例异常", "2435".equals(ListNodeUtils.translateToString(listNode)));
     }
 
     @Test
     void middleListNode() {
         ListNode listNode = leetCode19.removeNthFromEnd(normalListNode, 3);
-        Assert.isTrue("2456".equals(ListNodeUtils.translateToString(listNode)), "删除倒数第三个结点测试用例异常");
+        AssertionErrors.assertTrue("删除倒数第三个结点测试用例异常", "2456".equals(ListNodeUtils.translateToString(listNode)));
     }
 
     @Test
     void overSize() {
         ListNode listNode = leetCode19.removeNthFromEnd(normalListNode, 6);
-        Assert.isTrue(null == listNode, "n > length 测试用例异常");
+        AssertionErrors.assertTrue("n > length 测试用例异常", null == listNode);
     }
 
     @Test
     void minSize() {
         ListNode listNode = leetCode19.removeNthFromEnd(normalListNode, 0);
-        Assert.isTrue(null == listNode, "n < 0 测试用例异常");
+        AssertionErrors.assertTrue("n < 0 测试用例异常", null == listNode);
     }
 
     @Test
     void nullListNode() {
         ListNode listNode = leetCode19.removeNthFromEnd(null, 2);
-        Assert.isTrue(null == listNode, "空测试用例异常");
+        AssertionErrors.assertTrue("空测试用例异常", null == listNode);
     }
 }
