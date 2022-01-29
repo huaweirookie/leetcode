@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  * @author oscar
  * @date 2022/1/26 18:10
  */
-public class TestLeetCode344 {
+class TestLeetCode344 {
 
     private final LeetCode344 leetCode344 = new LeetCode344();
 
@@ -21,9 +21,4 @@ public class TestLeetCode344 {
 
     }
 
-    @Test
-    void test() {
-//        leetCode344.reverseString(data);
-        leetCode344.reverseString(new char[]{'H','a','n','n','a','h'});
-    }
 }

@@ -2,15 +2,15 @@ package com.zhunongyun.toalibaba.leetcode.linkedlist;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.util.Assert;
+import org.springframework.test.util.AssertionErrors;
 
 /**
- * TODO
+ *
  *
  * @author oscar
  * @date 2022/1/25 18:07
  */
-public class TestLeetCode2 {
+class TestLeetCode2 {
 
     private final LeetCode2 leetCode2 = new LeetCode2();
 
@@ -37,7 +37,7 @@ public class TestLeetCode2 {
     @Test
     void normal() {
         ListNode result = leetCode2.addTwoNumbers(normalListNode1, normalListNode2);
-        Assert.isTrue("708".equals(ListNodeUtils.translateToString(result)), "正常测试用例异常");
+        AssertionErrors.assertTrue("正常测试用例异常", "708".equals(ListNodeUtils.translateToString(result)));
     }
 
     /**
@@ -46,7 +46,7 @@ public class TestLeetCode2 {
     @Test
     void oneAndOne() {
         ListNode result = leetCode2.addTwoNumbers(new ListNode(0), new ListNode(0));
-        Assert.isTrue("0".equals(ListNodeUtils.translateToString(result)), "两组单个元素测试用例异常");
+        AssertionErrors.assertTrue("两组单个元素测试用例异常", "0".equals(ListNodeUtils.translateToString(result)));
     }
 
     /**
@@ -55,7 +55,7 @@ public class TestLeetCode2 {
     @Test
     void normalAndNull() {
         ListNode result = leetCode2.addTwoNumbers(normalListNode1, null);
-        Assert.isTrue("243".equals(ListNodeUtils.translateToString(result)), "正常测试用例 + null测试用例异常");
+        AssertionErrors.assertTrue("正常测试用例 + null测试用例异常", "243".equals(ListNodeUtils.translateToString(result)));
     }
 
     /**
@@ -64,6 +64,6 @@ public class TestLeetCode2 {
     @Test
     void shortAndLong() {
         ListNode result = leetCode2.addTwoNumbers(longListNode1, longListNode2);
-        Assert.isTrue("89990001".equals(ListNodeUtils.translateToString(result)), "两个长度不一样的测试用例异常");
+        AssertionErrors.assertTrue("两个长度不一样的测试用例异常", "89990001".equals(ListNodeUtils.translateToString(result)));
     }
 }

@@ -2,15 +2,15 @@ package com.zhunongyun.toalibaba.leetcode.linkedlist;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.util.Assert;
+import org.springframework.test.util.AssertionErrors;
 
 /**
- * TODO
+ *
  *
  * @author oscar
  * @date 2022/1/28 18:05
  */
-public class TestLeetCode22 {
+class TestLeetCode22 {
 
     private final LeetCode22 leetCode22 = new LeetCode22();
 
@@ -24,6 +24,6 @@ public class TestLeetCode22 {
     @Test
     void normal() {
         ListNode listNode = leetCode22.getKthFromEnd(normalListNode, 2);
-        Assert.isTrue("45".equals(ListNodeUtils.translateToString(listNode)), "正常测试用例异常");
+        AssertionErrors.assertTrue("正常测试用例异常", "45".equals(ListNodeUtils.translateToString(listNode)));
     }
 }

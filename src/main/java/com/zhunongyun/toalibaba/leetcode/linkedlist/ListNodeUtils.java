@@ -8,6 +8,10 @@ package com.zhunongyun.toalibaba.leetcode.linkedlist;
  */
 public class ListNodeUtils {
 
+    private ListNodeUtils() {
+
+    }
+
     /**
      * int[] 转换成 ListNode
      * @param data
