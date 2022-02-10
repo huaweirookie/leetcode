@@ -1,5 +1,8 @@
-package com.zhunongyun.toalibaba.leetcode.linkedlist;
+package com.zhunongyun.toalibaba.leetcode;
 
+import com.zhunongyun.toalibaba.leetcode.LeetCode206;
+import com.zhunongyun.toalibaba.leetcode.ListNode;
+import com.zhunongyun.toalibaba.leetcode.DataUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.util.AssertionErrors;
@@ -20,19 +23,19 @@ class TestLeetCode206 {
 
     @BeforeEach
     void prepareData() {
-        normalListNode = ListNodeUtils.translateToListNode(new int[]{1, 2, 3, 4, 5});
-        shortListNode = ListNodeUtils.translateToListNode(new int[]{1});
+        normalListNode = DataUtils.translateToListNode(1, 2, 3, 4, 5);
+        shortListNode = DataUtils.translateToListNode(1);
     }
 
     @Test
     void normalListNode() {
         ListNode listNode = leetCode206.reverseList(normalListNode);
-        AssertionErrors.assertTrue("正常测试用例异常", "54321".equals(ListNodeUtils.translateToString(listNode)));
+        AssertionErrors.assertTrue("正常测试用例异常", "54321".equals(DataUtils.translateListNodeToString(listNode)));
     }
 
     @Test
     void shortListNode() {
         ListNode listNode = leetCode206.reverseList(shortListNode);
-        AssertionErrors.assertTrue("正常测试用例异常", "1".equals(ListNodeUtils.translateToString(listNode)));
+        AssertionErrors.assertTrue("正常测试用例异常", "1".equals(DataUtils.translateListNodeToString(listNode)));
     }
 }

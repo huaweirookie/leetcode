@@ -1,4 +1,4 @@
-package com.zhunongyun.toalibaba.leetcode.linkedlist;
+package com.zhunongyun.toalibaba.leetcode;
 
 import java.util.HashMap;
 import java.util.Map;

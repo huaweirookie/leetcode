@@ -1,5 +1,8 @@
-package com.zhunongyun.toalibaba.leetcode.linkedlist;
+package com.zhunongyun.toalibaba.leetcode;
 
+import com.zhunongyun.toalibaba.leetcode.LeetCode24;
+import com.zhunongyun.toalibaba.leetcode.ListNode;
+import com.zhunongyun.toalibaba.leetcode.DataUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.util.AssertionErrors;
@@ -18,12 +21,12 @@ class TestLeetCode24 {
 
     @BeforeEach
     void prepareData() {
-        normalListNode = ListNodeUtils.translateToListNode(new int[]{1, 2, 3, 4});
+        normalListNode = DataUtils.translateToListNode(1, 2, 3, 4);
     }
 
     @Test
     void normal() {
         ListNode listNode = leetCode24.swapPairs(normalListNode);
-        AssertionErrors.assertTrue("正常测试用例异常", "2143".equals(ListNodeUtils.translateToString(listNode)));
+        AssertionErrors.assertTrue("正常测试用例异常", "2143".equals(DataUtils.translateListNodeToString(listNode)));
     }
 }

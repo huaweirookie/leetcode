@@ -1,5 +1,8 @@
-package com.zhunongyun.toalibaba.leetcode.linkedlist;
+package com.zhunongyun.toalibaba.leetcode;
 
+import com.zhunongyun.toalibaba.leetcode.LeetCode19;
+import com.zhunongyun.toalibaba.leetcode.ListNode;
+import com.zhunongyun.toalibaba.leetcode.DataUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.util.AssertionErrors;
@@ -18,25 +21,25 @@ class TestLeetCode19 {
 
     @BeforeEach
     void prepareData() {
-        normalListNode = ListNodeUtils.translateToListNode(new int[]{2, 4, 3, 5, 6});
+        normalListNode = DataUtils.translateToListNode(2, 4, 3, 5, 6);
     }
 
     @Test
     void firstListNode() {
         ListNode listNode = leetCode19.removeNthFromEnd(normalListNode, 5);
-        AssertionErrors.assertTrue("删除第一个结点测试用例异常", "4356".equals(ListNodeUtils.translateToString(listNode)));
+        AssertionErrors.assertTrue("删除第一个结点测试用例异常", "4356".equals(DataUtils.translateListNodeToString(listNode)));
     }
 
     @Test
     void lastListNode() {
         ListNode listNode = leetCode19.removeNthFromEnd(normalListNode, 1);
-        AssertionErrors.assertTrue("删除最后一个结点测试用例异常", "2435".equals(ListNodeUtils.translateToString(listNode)));
+        AssertionErrors.assertTrue("删除最后一个结点测试用例异常", "2435".equals(DataUtils.translateListNodeToString(listNode)));
     }
 
     @Test
     void middleListNode() {
         ListNode listNode = leetCode19.removeNthFromEnd(normalListNode, 3);
-        AssertionErrors.assertTrue("删除倒数第三个结点测试用例异常", "2456".equals(ListNodeUtils.translateToString(listNode)));
+        AssertionErrors.assertTrue("删除倒数第三个结点测试用例异常", "2456".equals(DataUtils.translateListNodeToString(listNode)));
     }
 
     @Test

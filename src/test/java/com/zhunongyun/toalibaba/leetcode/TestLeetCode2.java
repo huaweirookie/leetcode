@@ -1,5 +1,8 @@
-package com.zhunongyun.toalibaba.leetcode.linkedlist;
+package com.zhunongyun.toalibaba.leetcode;
 
+import com.zhunongyun.toalibaba.leetcode.LeetCode2;
+import com.zhunongyun.toalibaba.leetcode.ListNode;
+import com.zhunongyun.toalibaba.leetcode.DataUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.util.AssertionErrors;
@@ -25,10 +28,10 @@ class TestLeetCode2 {
     @BeforeEach
     void prepareData() {
         // 正常测试用例
-        normalListNode1 = ListNodeUtils.translateToListNode(new int[]{2, 4, 3});
-        normalListNode2 = ListNodeUtils.translateToListNode(new int[]{5, 6, 4});
-        longListNode1 = ListNodeUtils.translateToListNode(new int[]{9, 9, 9, 9, 9, 9, 9});
-        longListNode2 = ListNodeUtils.translateToListNode(new int[]{9, 9, 9, 9});
+        normalListNode1 = DataUtils.translateToListNode(2, 4, 3);
+        normalListNode2 = DataUtils.translateToListNode(5, 6, 4);
+        longListNode1 = DataUtils.translateToListNode(9, 9, 9, 9, 9, 9, 9);
+        longListNode2 = DataUtils.translateToListNode(9, 9, 9, 9);
     }
 
     /**
@@ -37,7 +40,7 @@ class TestLeetCode2 {
     @Test
     void normal() {
         ListNode result = leetCode2.addTwoNumbers(normalListNode1, normalListNode2);
-        AssertionErrors.assertTrue("正常测试用例异常", "708".equals(ListNodeUtils.translateToString(result)));
+        AssertionErrors.assertTrue("正常测试用例异常", "708".equals(DataUtils.translateListNodeToString(result)));
     }
 
     /**
@@ -46,7 +49,7 @@ class TestLeetCode2 {
     @Test
     void oneAndOne() {
         ListNode result = leetCode2.addTwoNumbers(new ListNode(0), new ListNode(0));
-        AssertionErrors.assertTrue("两组单个元素测试用例异常", "0".equals(ListNodeUtils.translateToString(result)));
+        AssertionErrors.assertTrue("两组单个元素测试用例异常", "0".equals(DataUtils.translateListNodeToString(result)));
     }
 
     /**
@@ -55,7 +58,7 @@ class TestLeetCode2 {
     @Test
     void normalAndNull() {
         ListNode result = leetCode2.addTwoNumbers(normalListNode1, null);
-        AssertionErrors.assertTrue("正常测试用例 + null测试用例异常", "243".equals(ListNodeUtils.translateToString(result)));
+        AssertionErrors.assertTrue("正常测试用例 + null测试用例异常", "243".equals(DataUtils.translateListNodeToString(result)));
     }
 
     /**
@@ -64,6 +67,6 @@ class TestLeetCode2 {
     @Test
     void shortAndLong() {
         ListNode result = leetCode2.addTwoNumbers(longListNode1, longListNode2);
-        AssertionErrors.assertTrue("两个长度不一样的测试用例异常", "89990001".equals(ListNodeUtils.translateToString(result)));
+        AssertionErrors.assertTrue("两个长度不一样的测试用例异常", "89990001".equals(DataUtils.translateListNodeToString(result)));
     }
 }

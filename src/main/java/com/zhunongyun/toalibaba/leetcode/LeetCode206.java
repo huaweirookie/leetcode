@@ -1,4 +1,4 @@
-package com.zhunongyun.toalibaba.leetcode.linkedlist;
+package com.zhunongyun.toalibaba.leetcode;
 
 /**
  * 反转链表

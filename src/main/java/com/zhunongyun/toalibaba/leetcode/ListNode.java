@@ -1,4 +1,4 @@
-package com.zhunongyun.toalibaba.leetcode.linkedlist;
+package com.zhunongyun.toalibaba.leetcode;
 
 /**
  * 链表公共类
