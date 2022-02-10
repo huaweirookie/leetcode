@@ -1,6 +1,7 @@
 package com.zhunongyun.toalibaba.leetcode;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * ListNode 工具类
@@ -62,6 +63,7 @@ public class DataUtils {
         }
 
         int[] result = new int[data.length];
+
         for (int i = 0; i < data.length; i++) {
             result[i] = data[i];
         }
@@ -75,7 +77,7 @@ public class DataUtils {
      */
     public static String translateIntToString(int[] data) {
         if (null == data || data.length == 0) {
-            return null;
+            return "";
         }
 
         StringBuilder sb = new StringBuilder();

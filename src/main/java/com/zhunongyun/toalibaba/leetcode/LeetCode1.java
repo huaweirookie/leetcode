@@ -13,25 +13,18 @@ public class LeetCode1 {
 
     public int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
-        if (nums == null || nums.length == 0) {
+        if (nums == null || nums.length < 2) {
             return result;
         }
 
         Map<Integer, Integer> dataMap = new HashMap<>(nums.length);
         for (int i = 0; i < nums.length; i++) {
-            dataMap.put(nums[i], i);
-        }
-
-        for (int i = 0; i < nums.length; i++) {
-            if (dataMap.containsKey(target - nums[i]) && !dataMap.get(target - nums[i]).equals(i)) {
-                if (dataMap.get(target - nums[i]) > i) {
-                    result[0] = i;
-                    result[1] = dataMap.get(target - nums[i]);
-                } else {
-                    result[0] = dataMap.get(target - nums[i]);
-                    result[1] = i;
-                }
+            if (dataMap.containsKey(target - nums[i])) {
+                result[0] = dataMap.get(target - nums[i]);
+                result[1] = i;
+                break;
             }
+            dataMap.put(nums[i], i);
         }
         return result;
     }
