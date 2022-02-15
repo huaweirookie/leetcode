@@ -1,7 +1,7 @@
 package com.zhunongyun.toalibaba.leetcode;
 
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.List;
 
 /**
  * ListNode 工具类
@@ -35,24 +35,6 @@ public class DataUtils {
     }
 
     /**
-     * ListNode 转换成 String
-     * @param listNode
-     * @return
-     */
-    public static String translateListNodeToString(ListNode listNode) {
-        if (null == listNode) {
-            return null;
-        }
-
-        StringBuilder sb = new StringBuilder();
-        while (listNode != null) {
-            sb.append(listNode.val);
-            listNode = listNode.next;
-        }
-        return sb.toString();
-    }
-
-    /**
      * 生成 int[]
      * @param data
      * @return
@@ -71,11 +53,66 @@ public class DataUtils {
     }
 
     /**
+     * 生成 int[][]
+     * @param data
+     * @return
+     */
+    public static int[][] translateToIntList(int[] ... data) {
+        if (null == data || data.length == 0) {
+            return new int[0][0];
+        }
+
+        int[][] result = new int[data.length][data[0].length];
+
+        for (int i = 0; i < data.length; i++) {
+            for(int j = 0; j < data[0].length; j++) {
+                result[i][j] = data[i][j];
+            }
+        }
+        return result;
+    }
+
+    /**
+     * ListNode 转换成 String
+     * @param listNode
+     * @return
+     */
+    public static String translateListNodeToString(ListNode listNode) {
+        if (null == listNode) {
+            return null;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        while (listNode != null) {
+            sb.append(listNode.val);
+            listNode = listNode.next;
+        }
+        return sb.toString();
+    }
+
+    /**
+     * List 转换成 String
+     * @param list
+     * @return
+     */
+    public static String translateListToString(List<Integer> list) {
+        if (null == list || list.isEmpty()) {
+            return null;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (Integer i : list) {
+            sb.append(i);
+        }
+        return sb.toString();
+    }
+
+    /**
      * int[] 转换成 String
      * @param data
      * @return
      */
-    public static String translateIntToString(int[] data) {
+    public static String translateListToString(int[] data) {
         if (null == data || data.length == 0) {
             return "";
         }
@@ -86,4 +123,6 @@ public class DataUtils {
         }
         return sb.toString();
     }
+
+
 }
