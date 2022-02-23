@@ -16,10 +16,11 @@ public class DataUtils {
 
     /**
      * int[] 转换成 ListNode
+     *
      * @param data
      * @return
      */
-    public static ListNode translateToListNode(Integer ... data) {
+    public static ListNode translateToListNode(Integer... data) {
         if (null == data || data.length == 0) {
             return null;
         }
@@ -35,10 +36,11 @@ public class DataUtils {
 
     /**
      * 生成 int[]
+     *
      * @param data
      * @return
      */
-    public static int[] translateToIntList(Integer ... data) {
+    public static int[] translateToIntList(Integer... data) {
         if (null == data || data.length == 0) {
             return new int[0];
         }
@@ -53,10 +55,11 @@ public class DataUtils {
 
     /**
      * 生成 int[][]
+     *
      * @param data
      * @return
      */
-    public static int[][] translateToIntList(int[] ... data) {
+    public static int[][] translateToIntList(int[]... data) {
         if (null == data || data.length == 0) {
             return new int[0][0];
         }
@@ -64,7 +67,7 @@ public class DataUtils {
         int[][] result = new int[data.length][data[0].length];
 
         for (int i = 0; i < data.length; i++) {
-            for(int j = 0; j < data[0].length; j++) {
+            for (int j = 0; j < data[0].length; j++) {
                 result[i][j] = data[i][j];
             }
         }
@@ -73,6 +76,7 @@ public class DataUtils {
 
     /**
      * ListNode 转换成 String
+     *
      * @param listNode
      * @return
      */
@@ -91,6 +95,7 @@ public class DataUtils {
 
     /**
      * List 转换成 String
+     *
      * @param list
      * @return
      */
@@ -108,6 +113,7 @@ public class DataUtils {
 
     /**
      * int[] 转换成 String
+     *
      * @param data
      * @return
      */
@@ -123,5 +129,30 @@ public class DataUtils {
         return sb.toString();
     }
 
+    /**
+     * int[] 转换成 String
+     *
+     * @param data
+     * @return
+     */
+    public static String translateListAndListToString(List<List<Integer>> data) {
+        if (null == data || data.isEmpty()) {
+            return "[]";
+        }
 
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        data.forEach(item -> {
+            sb.append("[");
+            item.forEach(temp -> {
+                sb.append(temp).append(",");
+            });
+            sb.deleteCharAt(sb.lastIndexOf(","));
+            sb.append("]").append(",");
+        });
+        sb.deleteCharAt(sb.lastIndexOf(","));
+        sb.append("]");
+
+        return sb.toString();
+    }
 }
